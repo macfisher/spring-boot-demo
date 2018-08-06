@@ -1,4 +1,4 @@
-package com.example.HelloSpringBoot;
+package com.example.springbootdemo;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController
 {
     @RequestMapping("/")
-    public String home() { return "Hello, Spring Boot."; }
+    public String home() { return "Spring Boot"; }
 }
