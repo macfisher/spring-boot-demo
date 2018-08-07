@@ -21,9 +21,9 @@ public class PageController
     @RequestMapping("/")
     public String home() { return notificationService.toString(); }
 
-    @Autowired // injects NotificationService into setter function
+    /*@Autowired // injects NotificationService into setter function
     public void setNotificationService(NotificationService notificationService)
     {
         this.notificationService = notificationService;
-    }
+    }*/
 }
