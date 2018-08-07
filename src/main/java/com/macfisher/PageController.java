@@ -20,6 +20,12 @@ public class PageController
     @Value("${my.secret}")
     private String mySecret;
 
+    @Value("${spring.profiles.active}")
+    private String environment;
+
+    @Value("${msg}")
+    private String environmentMsg;
+
     @Autowired
     public PageController(NotificationService notificationService) {
         this.notificationService = notificationService;
@@ -39,4 +45,10 @@ public class PageController
 
     @RequestMapping("secret")
     public String secret() { return mySecret; }
+
+    @RequestMapping("environment")
+    public String getEnvironment() { return environment; }
+
+    @RequestMapping("environment-message")
+    public String getEnvironmentMsg() { return environmentMsg; }
 }
