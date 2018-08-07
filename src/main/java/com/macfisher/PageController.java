@@ -15,7 +15,7 @@ public class PageController
 
     @Autowired
     public PageController(NotificationService notificationService) {
-        this.notificationService = notificationService
+        this.notificationService = notificationService;
     }
 
     @RequestMapping("/")
