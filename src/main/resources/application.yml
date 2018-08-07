@@ -1,4 +1,7 @@
-pageController:
-  msg: "Hello from YAML config"
-  foo: "foo"
-  bar: "bar"
+myconfig:
+  app-name: My Application Name
+  app-description: ${myconfig.app-name} is a Spring Boot application
+  admin-first-name: Mackenzie
+  admin-last-name: Fisher
+  adminEmail: macfisher01@gmail.com
+  

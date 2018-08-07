@@ -3,6 +3,7 @@ package com.macfisher;
 import com.abc.foo.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,6 +22,7 @@ import java.util.Arrays;
 
 @ComponentScan({"com.macfisher", "com.abc.foo"})
 @SpringBootApplication
+@EnableConfigurationProperties
 public class SpringBeansApplication // bean definitions for app. context
 {
     public static void main(String[] args) {
@@ -34,6 +36,9 @@ public class SpringBeansApplication // bean definitions for app. context
             System.out.println(name);
 
         System.out.println(ctx.getBean("user").toString());
+
+        MyAppConfig config = (MyAppConfig) ctx.getBean("myAppConfig");
+        System.out.println(config.toString());
     }
 
     @Bean
