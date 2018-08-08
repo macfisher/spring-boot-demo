@@ -39,6 +39,8 @@ public class SpringBeansApplication // bean definitions for app. context
 
         MyAppConfig config = (MyAppConfig) ctx.getBean("myAppConfig");
         System.out.println(config.toString());
+
+        System.out.println(ctx.getBean("datasource").toString());
     }
 
     @Bean
