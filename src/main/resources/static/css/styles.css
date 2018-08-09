@@ -1,0 +1,10 @@
+body {
+    background: #0999CE url("../images/442694.png") no-repeat;
+    background-size: 100%;
+    color: #000;
+    font-size: 12px;
+    line-height: 100%;
+    margin: 10px;
+}
+
+.intro { background-color: #FFF; opacity: .9; padding: 20px; }
