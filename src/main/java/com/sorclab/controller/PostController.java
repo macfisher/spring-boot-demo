@@ -1,36 +1,41 @@
 package com.sorclab.controller;
 
 import com.sorclab.domain.Post;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.ArrayList;
-import java.util.Date;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/posts")
 public class PostController
 {
-    /*@RequestMapping("/")
-    public String list(Model model) {
-        model.addAttribute("pageTitle", "My Custom Page Title");
-        model.addAttribute("posts", createPosts());
-        return "views/list";
+    private static final Logger logger = LoggerFactory
+                                            .getLogger(PostController.class);
+
+    /*@RequestMapping("/get/{slug}")
+    public String getPost(@PathVariable(value="slug") String slug) throws Exception
+    {
+        Post post = null;
+
+        if (post == null)
+            throw new Exception("We couldn't find the post with slug: " + slug);
+
+        return "post";
     }*/
 
-    /*private ArrayList<Post> createPosts() {
-        // post 1
-        Post post1 = new Post();
-        post1.setTitle("My Blog Post 1");
-        //post1.setPosted(new Date());
-        post1.setAuthor("Mackenzie Fisher");
-        //post1.setBody(getPostBody());
-
-        // post 2
-        Post post2 = new Post();
-        post2.setTitle("My Blog Post 2");
-        //post2.setPosted(new Date());
-
-    }*/
+    /** See global handler example code
+    @ExceptionHandler(Exception.class)
+    public String handleException(HttpServletRequest req, Exception exception,
+        Model model)
+    {
+        model.addAttribute("errorMessage", exception.getMessage());
+        return "postError";
+    }
+    */
 }
