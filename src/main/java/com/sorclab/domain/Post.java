@@ -2,20 +2,23 @@ package com.sorclab.domain;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "POST", schema = "test")
 public class Post
 {
     @Id
     @GeneratedValue
     private Long id;
 
+    @Column
     private String title;
+
+    @Column
     private String body;
+
+    @Column
     private Date postedOn;
 
     @ManyToOne
