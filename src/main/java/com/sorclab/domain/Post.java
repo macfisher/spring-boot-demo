@@ -1,13 +1,28 @@
 package com.sorclab.domain;
 
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class Post
 {
+    @Id
+    @GeneratedValue
+    private Long id;
+
     private String title;
     private String body;
-    private String posted;
-    private String author;
+    private Date postedOn;
 
-    public Post() {}
+    @ManyToOne
+    private Author author;
+
+    private Post() {} // needed by JPA
+    public Post(String title) { setTitle(title); }
 
     public String getTitle() { return title; }
     public void setTitle(String title) { this.title = title; }
@@ -15,9 +30,9 @@ public class Post
     public String getBody() { return body; }
     public void setBody(String body) { this.body = body; }
 
-    public String getPosted() { return posted; }
-    public void setPosted(String posted) { this.posted = posted; }
+    public Date getPostedOn() { return postedOn; }
+    public void setPostedOn(Date postedOn) { this.postedOn = postedOn; }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
+    @Override
+    public String toString() { return "Post [title=" + title + "]"; }
 }
