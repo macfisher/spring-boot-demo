@@ -14,7 +14,7 @@ public class EnvironmentController
     @Autowired
     DisplayEnvironmentService displayEnv;
 
-    @Value("${spring.jpa.generate-ddl}")
+    @Value("${spring.profiles.active}")
     String msg;
 
     @RequestMapping("/environment")

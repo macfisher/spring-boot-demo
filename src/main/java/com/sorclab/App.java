@@ -6,24 +6,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-/*
-@Autowired
-private Environment environment;
-....
-
-this.environment.getActiveProfiles();
- */
-
 @SpringBootApplication
-// PropertySource("application.properties")
-// EntityScan(basePackages = {"com.sorclab.domain"})
 public class App
 {
     private static final Logger logger = LoggerFactory.getLogger(App.class);
-
-    // PostRepository
-
-    // DataLoader
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication
